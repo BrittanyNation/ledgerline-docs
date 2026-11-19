@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LedgerLine Docs — Billing and Claims Documentation Hub</title>
+<meta name="description" content="Searchable documentation hub for LedgerLine, a fictional medical billing and claims platform: guides, worked examples, and plain word explanations.">
+<meta property="og:title" content="LedgerLine Docs — Billing and Claims Documentation Hub">
+<meta property="og:description" content="Guides, examples, and an interactive API playground for a fictional billing platform. A portfolio project by Brittany Nation.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://brittanynation.github.io/ledgerline-docs/">
+<meta property="og:image" content="https://brittanynation.github.io/ledgerline-docs/og-image.png">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="site"><a class="logo" href="index.html">Ledger<span>Line</span> Docs</a>
+<nav class="main"><a href="index.html" aria-current="page">Guides</a><a href="playground.html">API Playground</a><a href="resources.html">Changelog and Glossary</a></nav></header>
+<section class="hero"><h1>Documentation that answers the question you actually have</h1>
+<p>LedgerLine is a fictional medical billing and claims platform. This hub holds its full documentation set: task guides with numbered steps, worked claim examples, error code explanations, and an interactive playground where you can try a sample request safely.</p>
+<div class="searchbar"><input id="heroSearch" type="search" placeholder="Search guides, for example denial or eligibility" aria-label="Search guides"><button class="btn" id="heroSearchBtn">Search</button></div>
+<img src="images/p3184465.jpg" alt="A billing team reviewing documentation together at a table">
+</section>
+<main class="wrap">
+<div class="stats"><div class="stat"><strong id="statGuides">12</strong>Guides</div><div class="stat"><strong>4</strong>Doc sets</div><div class="stat"><strong>3 min</strong>Average read</div><div class="stat"><strong id="statUpdated">Nov 2026</strong>Last updated</div></div>
+<h2>Browse the guides</h2>
+<div class="chips" id="topicChips" role="group" aria-label="Filter by topic"></div>
+<div class="toolbar"><input id="searchInput" type="search" placeholder="Search title or keywords" aria-label="Search guides">
+<select id="sortSelect" aria-label="Sort guides"><option value="popular">Most read</option><option value="minutes">Shortest first</option><option value="title">Title A to Z</option></select>
+<span id="resultCount" class="meta"></span></div>
+<div class="grid" id="guideGrid"></div>
+<p id="emptyState" class="hidden">No guides match that search yet. Try a shorter word, or browse a topic above.</p>
+<section><h2>How this documentation is written</h2>
+<div class="two"><div><img src="images/p3769021.jpg" alt="A writer drafting documentation at a desk" style="width:100%;border-radius:14px;height:200px;object-fit:cover"><p>Every guide follows the same shape: who it is for, what you need before you start, numbered steps, a worked example with real numbers, and the errors people hit most often. Plain words first, technical terms explained the first time they appear.</p></div>
+<div><img src="images/p3184291.jpg" alt="Colleagues pair reviewing a guide on a laptop" style="width:100%;border-radius:14px;height:200px;object-fit:cover"><p>Guides are tested against the playground on the next page. If a step in a guide cannot be done in the playground, the guide is wrong and gets fixed first. That rule keeps the writing honest.</p></div></div></section>
+</main>
+<div class="modal" id="readerModal" role="dialog" aria-modal="true" aria-labelledby="readerTitle"><div class="box">
+<button class="btn secondary" id="readerClose">Close</button>
+<h2 id="readerTitle"></h2><p class="meta" id="readerMeta"></p><p id="readerIntro"></p>
+<h3>Before you start</h3><p id="readerNeed"></p><h3>Steps</h3><ol id="readerSteps"></ol>
+<h3>Worked example</h3><p id="readerExample"></p>
+<pre id="readerCode"></pre><button class="btn secondary" id="copyCodeBtn">Copy example</button> <span id="copyNote" class="meta"></span>
+<p style="margin-top:18px"><button class="btn" id="helpfulBtn">This guide helped me</button> <span id="helpfulNote" class="meta"></span></p>
+</div></div>
+<footer class="site">LedgerLine Docs is an original portfolio concept by Brittany Nation. LedgerLine is fictional, no affiliation with any real company is claimed, and no real health or billing information should be entered anywhere on this site. Sample data lives only in your browser.</footer>
+<script src="docs.js"></script></body></html>
