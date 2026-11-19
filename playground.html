@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Playground — LedgerLine Docs</title>
+<meta name="description" content="Try a sample LedgerLine API request safely: validated form, simulated response, saved request history.">
+<meta property="og:title" content="LedgerLine Docs — API Playground"><meta property="og:description" content="Try a sample billing API request safely in your browser.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://brittanynation.github.io/ledgerline-docs/playground.html">
+<meta property="og:image" content="https://brittanynation.github.io/ledgerline-docs/og-image.png">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="site"><a class="logo" href="index.html">Ledger<span>Line</span> Docs</a>
+<nav class="main"><a href="index.html">Guides</a><a href="playground.html" aria-current="page">API Playground</a><a href="resources.html">Changelog and Glossary</a></nav></header>
+<main class="wrap"><h1>API Playground</h1>
+<p>This playground simulates the LedgerLine API in your browser. Nothing is sent anywhere. Fill the form, send the sample request, and read a realistic response, the same response shape the guides describe. Valid requests earn a reference in the format LL-XXXXXX and are saved in your request history on this device.</p>
+<img src="images/p7176319.jpg" alt="A developer testing an API request on a laptop" style="width:100%;height:240px;object-fit:cover;border-radius:14px">
+<div class="two"><div>
+<form id="playForm" novalidate>
+<label for="endpoint">Endpoint</label>
+<select id="endpoint"><option value="claims">Submit a claim — POST /v1/claims</option><option value="eligibility">Check eligibility — GET /v1/eligibility</option><option value="status">Claim status inquiry — GET /v1/claims/status</option><option value="appeal">Submit an appeal — POST /v1/appeals</option></select>
+<label for="patientRef">Patient reference (format P- followed by 4 digits)</label><input id="patientRef" placeholder="P-8841"><p class="error" id="errPatient"></p>
+<label for="memberId">Member ID</label><input id="memberId" placeholder="MB-2210"><p class="error" id="errMember"></p>
+<label for="dos">Date of service</label><input id="dos" type="date"><p class="error" id="errDos"></p>
+<label for="amount">Billed amount in dollars (claims and appeals)</label><input id="amount" type="number" min="0" step="0.01" placeholder="180.00"><p class="error" id="errAmount"></p>
+<label for="note">Note for the request (at least 10 characters for an appeal)</label><textarea id="note" rows="3" placeholder="Reason or note"></textarea><p class="error" id="errNote"></p>
+<button class="btn" type="submit">Send sample request</button>
+</form></div>
+<div><h2>Response</h2><div id="respEmpty"><p class="meta">No request sent yet. Your simulated response will appear here as JSON, exactly as the guides quote it.</p></div>
+<pre class="resp hidden" id="respBox"></pre>
+<button class="btn secondary hidden" id="copyRespBtn">Copy response</button> <span id="copyRespNote" class="meta"></span>
+<div id="confirmBox" class="success hidden" style="margin-top:14px"></div>
+</div></div>
+<h2>Request history on this device</h2><p class="meta">Saved with localStorage. Clear it any time.</p>
+<div id="historyList"></div><p id="historyEmpty" class="meta">No saved requests yet.</p>
+<button class="btn secondary" id="clearHistoryBtn">Clear history</button>
+</main>
+<footer class="site">LedgerLine Docs is an original portfolio concept by Brittany Nation. LedgerLine is fictional and this playground is a browser simulation, not a live API.</footer>
+<script src="playground.js"></script></body></html>
